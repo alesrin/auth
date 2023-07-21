@@ -1,0 +1,18 @@
+
+<form [formGroup]="usuario">
+    <div>
+    <label >Email</label>
+    <input formControlName="email" autocapitalize="off">
+    </div>
+    <label *ngIf="usuario.controls['email'].errors?.['email'] && (usuario.touched || usuario.dirty)">* El email no es válido.</label>
+    <div>
+    <label>Contraseña</label>
+    <input formControlName="password" type="password">
+    </div>
+    <label *ngIf="usuario.controls['password'].errors?.['minlength'] && (usuario.touched || usuario.dirty)">*La contraseña debe tener al menos 6
+    caracteres</label>
+    <div class="padding">
+    <button [disabled]="!usuario.valid" (click)="login()" type="submit" color="primary" expand="block">Login</button>
+    <button [disabled]="!usuario.valid" (click)="signin()" type="submit" color="secondary" expand="block">Dar de alta</button>
+    </div>
+</form>
