@@ -1,0 +1,16 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea formControlName="description"></textarea>
+    </div>
+    <div>
+        <label>Image</label>
+        <input type="text" formControlName="image">
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+<app-lista-lugar></app-lista-lugar>
